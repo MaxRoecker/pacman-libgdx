@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.ai.pfa.Connection;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -18,6 +19,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.*;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +33,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 	private OrthographicCamera camera;
     private TiledMapRenderer tiledMapRenderer;
     private Pacman pacman;
+    private Ghost ghost;
     private List<Pacdot> pacdots, destroyed;
     private List<Teleport> teleportPoints;
     private List<Vector2> playerSpawnPoints, fruitSpawnPoints, ghostSpawnPoints;
@@ -85,6 +88,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
             tiledMapRenderer.setView(camera);
             tiledMapRenderer.render();
             pacman.update(Gdx.graphics.getDeltaTime());
+            ghost.update(Gdx.graphics.getDeltaTime());
             pacdots.stream().forEach(p -> p.update(Gdx.graphics.getDeltaTime()));
             pacdots.stream().filter(p -> p.destroy).forEach(p -> {
 	            destroyed.add(p);
@@ -122,6 +126,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
                 batch.begin();
                 for (Pacdot p : pacdots) p.draw(batch);
                 pacman.draw(batch);
+                ghost.draw(batch);
                 font.setColor(Color.WHITE);
                 font.draw(batch, "SCORE: " + String.format("%04d", pacman.getScore()), 4, 12);
                 batch.end();
@@ -160,6 +165,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
         TiledMapTileLayer collisionLayer = (TiledMapTileLayer) tiledMap.getLayers().get("Map");
         TiledMapTileLayer objectLayer = ((TiledMapTileLayer) tiledMap.getLayers().get("Objects"));
         MapLayer teleportLayer = tiledMap.getLayers().get("Teleports");
+        MapLayer junctionLayer = tiledMap.getLayers().get("Nodes");
+
         objectLayer.setOpacity(0);
         if (pacdots != null) {
             pacdots.stream().forEach(Pacdot::dispose);
@@ -203,6 +210,7 @@ public class Game extends ApplicationAdapter implements InputProcessor {
                 if (t == null) continue;
                 MapProperties properties = t.getProperties();
                 if (properties == null) continue;
+
                 String type = properties.get("type", String.class);
                 if (type == null) continue;
                 switch (type) {
@@ -231,11 +239,14 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 	    pacdotCount = pacdots.size();
 	    bonusPacdotCount = 0;
         Vector2 spawn = playerSpawnPoints.get(rand.nextInt(playerSpawnPoints.size()));
+
+
         if (pacman == null) {
             pacman = new Pacman((int) spawn.x * 16, (int) spawn.y * 16, collisionLayer);
         } else {
             pacman.teleport((int) spawn.x * 16, (int) spawn.y * 16).stopMoving().setCollisionLayer(collisionLayer);
         }
+
         pacdots.stream().forEach(p -> p.setPacman(pacman));
         for (MapObject m : teleportLayer.getObjects()) {
             if (m.getProperties().containsKey("x") && m.getProperties().containsKey("y") && m.getProperties().containsKey("targetX") && m.getProperties().containsKey("targetY") && m.getProperties().containsKey("outDirection")) {
@@ -248,6 +259,24 @@ public class Game extends ApplicationAdapter implements InputProcessor {
                 System.out.printf("Teleport: {%d;%d} -> {%d;%d} (%s)\n", x, y, targetX, targetY, outDirection);
             }
         }
+
+        /* Criar */
+        spawn = ghostSpawnPoints.get(rand.nextInt(playerSpawnPoints.size()));
+        if(ghost == null){
+            ghost = new Ghost((int) /*spawn.x*/ 10 * 16, (int) /*spawn.y*/ 7 * 16, collisionLayer);
+            ghost.setObjectivePosition(pacman.position);
+        }
+
+        for(MapObject junction : junctionLayer.getObjects()){
+            if(junction.getProperties().containsKey("x") && junction.getProperties().containsKey("y")){
+                int x = junction.getProperties().get("x", Float.class).intValue() / 16;
+                int y = junction.getProperties().get("y", Float.class).intValue() / 16;
+                ghost.getJunctions().add(new Junction(x*16,y*16,ghost));
+            }
+        }
+
+
+
         return true;
     }
 

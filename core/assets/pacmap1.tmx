@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="21" tilewidth="16" tileheight="16" nextobjectid="38">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="21" tilewidth="16" tileheight="16" nextobjectid="112">
  <tileset firstgid="1" name="PacMapTileset" tilewidth="16" tileheight="16">
   <image source="pacman-tileset.png" width="768" height="128"/>
   <terraintypes>
@@ -1105,7 +1105,7 @@
  </tileset>
  <layer name="Map" width="19" height="21">
   <data encoding="base64" compression="zlib">
-   eJy1lE0OgkAMhQdZ6DU8grqA66gLvRAwFxrxQopLS9JJmpcZWggsvkA7bebRH1rn3KDQGWI8EYhjMY01JsZ96fkT74OwPxm/zAlGXRZyuhrQ0YGeZoYu9Gl29D2IHVNyTKXUq2a7ELlP4kScmYvL35vShblX4sbcQUcLPfNwnsq1zpWmV35zrFfs0wtm+w3nmLtmvfYT9crNV6pehw330YMebR9ln3Hu5+4m5laJ+637KPXWK+9jAA0jvVKvXsRu9f/C2V7KuBN/noqtNQ==
+   eJy1lE0SgjAMhYsu9BoeQV3AddQFXgjohSpeSHFpmElnMm9aEpy6+AaSJtNHfuidc5PCYIjxRCAO1TLWmBj3pudHvE/CfmX8MicYdVnI6epAxwB6uhW60KfZ0dcSG2bLMbVSr4btSuTeiSNxYs4uf29KF+ZeiCtzAx099MzDeSrXOleaXvnNsV6xTw+Y7SecY27Jeu0W6pWbr1S99n/cRw96tH2Ufca5X7ubmFsn7rfuo9TbFN7HABpmRqVeI9sypvT/C2f7V+ad+AIPbaxg
   </data>
  </layer>
  <layer name="Objects" width="19" height="21">
@@ -1128,5 +1128,72 @@
     <property name="targetY" value="11"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="Nodes">
+  <object id="43" x="16" y="16" width="16" height="16"/>
+  <object id="44" x="16" y="48" width="16" height="16"/>
+  <object id="45" x="16" y="80" width="16" height="16"/>
+  <object id="46" x="64" y="16" width="16" height="16"/>
+  <object id="47" x="64" y="48" width="16" height="16"/>
+  <object id="48" x="64" y="80" width="16" height="16"/>
+  <object id="49" x="64" y="144" width="16" height="16"/>
+  <object id="50" x="128" y="16" width="16" height="16"/>
+  <object id="51" x="128" y="48" width="16" height="16"/>
+  <object id="52" x="96" y="48" width="16" height="16"/>
+  <object id="53" x="96" y="80" width="16" height="16"/>
+  <object id="54" x="128" y="80" width="16" height="16"/>
+  <object id="55" x="128" y="112" width="16" height="16"/>
+  <object id="56" x="160" y="112" width="16" height="16"/>
+  <object id="57" x="96" y="144" width="16" height="16"/>
+  <object id="58" x="96" y="176" width="16" height="16"/>
+  <object id="59" x="192" y="176" width="16" height="16"/>
+  <object id="60" x="192" y="144" width="16" height="16"/>
+  <object id="61" x="192" y="112" width="16" height="16"/>
+  <object id="62" x="96" y="112" width="16" height="16"/>
+  <object id="63" x="160" y="48" width="16" height="16"/>
+  <object id="65" x="160" y="16" width="16" height="16"/>
+  <object id="66" x="224" y="16" width="16" height="16"/>
+  <object id="67" x="272" y="16" width="16" height="16"/>
+  <object id="68" x="272" y="48" width="16" height="16"/>
+  <object id="69" x="272" y="80" width="16" height="16"/>
+  <object id="70" x="224" y="80" width="16" height="16"/>
+  <object id="71" x="224" y="48" width="16" height="16"/>
+  <object id="72" x="224" y="144" width="16" height="16"/>
+  <object id="73" x="224" y="208" width="16" height="16"/>
+  <object id="75" x="192" y="48" width="16" height="16"/>
+  <object id="76" x="192" y="80" width="16" height="16"/>
+  <object id="77" x="160" y="80" width="16" height="16"/>
+  <object id="78" x="272" y="208" width="16" height="16"/>
+  <object id="79" x="272" y="240" width="16" height="16"/>
+  <object id="80" x="256" y="240" width="16" height="16"/>
+  <object id="81" x="256" y="272" width="16" height="16"/>
+  <object id="82" x="272" y="272" width="16" height="16"/>
+  <object id="83" x="272" y="304" width="16" height="16"/>
+  <object id="84" x="160" y="304" width="16" height="16"/>
+  <object id="85" x="128" y="304" width="16" height="16"/>
+  <object id="86" x="16" y="304" width="16" height="16"/>
+  <object id="87" x="16" y="272" width="16" height="16"/>
+  <object id="88" x="32" y="272" width="16" height="16"/>
+  <object id="89" x="32" y="240" width="16" height="16"/>
+  <object id="90" x="16" y="240" width="16" height="16"/>
+  <object id="92" x="16" y="208" width="16" height="16"/>
+  <object id="93" x="64" y="208" width="16" height="16"/>
+  <object id="94" x="64" y="240" width="16" height="16"/>
+  <object id="95" x="64" y="272" width="16" height="16"/>
+  <object id="96" x="96" y="208" width="16" height="16"/>
+  <object id="97" x="96" y="240" width="16" height="16"/>
+  <object id="98" x="96" y="272" width="16" height="16"/>
+  <object id="99" x="128" y="272" width="16" height="16"/>
+  <object id="100" x="160" y="272" width="16" height="16"/>
+  <object id="101" x="192" y="272" width="16" height="16"/>
+  <object id="102" x="192" y="240" width="16" height="16"/>
+  <object id="103" x="128" y="240" width="16" height="16"/>
+  <object id="104" x="160" y="240" width="16" height="16"/>
+  <object id="105" x="128" y="208" width="16" height="16"/>
+  <object id="106" x="160" y="208" width="16" height="16"/>
+  <object id="107" x="192" y="208" width="16" height="16"/>
+  <object id="108" x="224" y="240" width="16" height="16"/>
+  <object id="109" x="224" y="272" width="16" height="16"/>
+  <object id="111" x="224" y="304" width="16" height="16"/>
  </objectgroup>
 </map>

@@ -121,6 +121,7 @@ public class Entity {
 		return false;
 	}
 
+
 	public TiledMapTileLayer getCollisionLayer(){
 		return this.collisionLayer;
 	}

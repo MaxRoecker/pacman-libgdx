@@ -18,9 +18,9 @@ public class Pacman extends Entity {
 
     public Pacman(int x, int y, TiledMapTileLayer collisionLayer) {
         super(x, y, collisionLayer);
-        Texture texture = new Texture(Gdx.files.internal("petman.png"));
+        Texture texture = new Texture(Gdx.files.internal("pacman.png"));
 	    int tileSize = texture.getHeight();
-	    int animationFrameCount = 1;
+	    int animationFrameCount = 4;
         TextureRegion[] regions = new TextureRegion[animationFrameCount];
         for (int i = 0; i < animationFrameCount; i++) {
             regions[i] = new TextureRegion(texture, tileSize * i, 0, tileSize, tileSize);
@@ -48,17 +48,14 @@ public class Pacman extends Entity {
             if (movementPrediction != Direction.NONE) {
                 wantToMove.set(position.cpy().mulAdd(movementPrediction.getUnitVector(), speed));
                 if (testCollision(wantToMove)) {
-                    System.out.println("Movement Predicted.");
                     setDirection(movementPrediction);
                     movementPrediction = Direction.NONE;
                     movementPredictionCounter = 0;
                     noPrediction = false;
                 } else if (movementPredictionCounter > 12) {
-                    System.out.println("Movement Prediction Expired.");
                     movementPrediction = Direction.NONE;
                     movementPredictionCounter = 0;
                 } else {
-                    System.out.println("Trying Prediction Next Frame.");
                     movementPredictionCounter++;
                 }
             }
@@ -70,8 +67,6 @@ public class Pacman extends Entity {
                 } else {
                     wantToMove.set(position.cpy().mulAdd(previousDirection.getUnitVector(), speed));
                     if (testCollision(wantToMove)) {
-                        System.out.println("Skipping Blocked Direction.");
-                        System.out.println("Activating Movement Prediction.");
                         movementPrediction = direction;
                         movementPredictionCounter = 0;
                         setDirection(previousDirection);
@@ -86,8 +81,7 @@ public class Pacman extends Entity {
 
 	@Override
     public void draw(Batch batch) {
-		super.draw(batch);
-        batch.draw(currentFrame, position.x, position.y, origin.x, origin.y, size.x, size.y, scale.x, scale.y, rotation * 0);
+        batch.draw(currentFrame, position.x, position.y, origin.x, origin.y, size.x, size.y, scale.x, scale.y, rotation);
     }
 
     public Pacman teleport(int x, int y) {

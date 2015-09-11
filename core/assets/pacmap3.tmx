@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="21" tilewidth="16" tileheight="16" nextobjectid="40">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="21" tilewidth="16" tileheight="16" nextobjectid="79">
  <tileset firstgid="1" name="PacMapTileset" tilewidth="16" tileheight="16">
-  <image source="pacman-tileset.png" width="768" height="768"/>
+  <image source="pacman-tileset.png" width="768" height="128"/>
   <terraintypes>
    <terrain name="Blue" tile="49"/>
   </terraintypes>
@@ -1150,5 +1150,44 @@
     <property name="targetY" value="20"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup name="Nodes">
+  <object id="40" x="16" y="160" width="16" height="16"/>
+  <object id="41" x="48" y="160" width="16" height="16"/>
+  <object id="42" x="80" y="160" width="16" height="16"/>
+  <object id="43" x="96" y="160" width="16" height="16"/>
+  <object id="44" x="112" y="160" width="16" height="16"/>
+  <object id="45" x="112" y="176" width="16" height="16"/>
+  <object id="46" x="112" y="208" width="16" height="16"/>
+  <object id="47" x="144" y="208" width="16" height="16"/>
+  <object id="48" x="144" y="176" width="16" height="16"/>
+  <object id="49" x="176" y="176" width="16" height="16"/>
+  <object id="50" x="176" y="208" width="16" height="16"/>
+  <object id="51" x="176" y="160" width="16" height="16"/>
+  <object id="52" x="192" y="160" width="16" height="16"/>
+  <object id="53" x="208" y="160" width="16" height="16"/>
+  <object id="54" x="240" y="160" width="16" height="16"/>
+  <object id="55" x="272" y="160" width="16" height="16"/>
+  <object id="56" x="192" y="112" width="16" height="16"/>
+  <object id="57" x="144" y="112" width="16" height="16"/>
+  <object id="58" x="96" y="112" width="16" height="16"/>
+  <object id="59" x="192" y="80" width="16" height="16"/>
+  <object id="60" x="144" y="80" width="16" height="16"/>
+  <object id="61" x="96" y="80" width="16" height="16"/>
+  <object id="62" x="144" y="48" width="16" height="16"/>
+  <object id="63" x="144" y="16" width="16" height="16"/>
+  <object id="64" x="144" y="240" width="16" height="16"/>
+  <object id="65" x="144" y="272" width="16" height="16"/>
+  <object id="66" x="144" y="304" width="16" height="16"/>
+  <object id="67" x="208" y="240" height="16"/>
+  <object id="68" x="80" y="240" width="16" height="16"/>
+  <object id="69" x="48" y="272" width="16" height="16"/>
+  <object id="70" x="240" y="272" width="16" height="16"/>
+  <object id="71" x="240" y="48" width="16" height="16"/>
+  <object id="72" x="48" y="48" width="16" height="16"/>
+  <object id="73" x="16" y="16" width="16" height="16"/>
+  <object id="74" x="16" y="304" width="16" height="16"/>
+  <object id="77" x="272" y="304" width="16" height="16"/>
+  <object id="78" x="272" y="16" width="16" height="16"/>
  </objectgroup>
 </map>
