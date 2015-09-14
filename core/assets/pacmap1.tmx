@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="21" tilewidth="16" tileheight="16" nextobjectid="112">
+<map version="1.0" orientation="orthogonal" renderorder="right-up" width="19" height="21" tilewidth="16" tileheight="16" nextobjectid="119">
  <tileset firstgid="1" name="PacMapTileset" tilewidth="16" tileheight="16">
   <image source="pacman-tileset.png" width="768" height="128"/>
   <terraintypes>
@@ -1105,7 +1105,7 @@
  </tileset>
  <layer name="Map" width="19" height="21">
   <data encoding="base64" compression="zlib">
-   eJy1lE0SgjAMhYsu9BoeQV3AddQFXgjohSpeSHFpmElnMm9aEpy6+AaSJtNHfuidc5PCYIjxRCAO1TLWmBj3pudHvE/CfmX8MicYdVnI6epAxwB6uhW60KfZ0dcSG2bLMbVSr4btSuTeiSNxYs4uf29KF+ZeiCtzAx099MzDeSrXOleaXvnNsV6xTw+Y7SecY27Jeu0W6pWbr1S99n/cRw96tH2Ufca5X7ubmFsn7rfuo9TbFN7HABpmRqVeI9sypvT/C2f7V+ad+AIPbaxg
+   eJy1lE0OgkAMhQdZ6DU8grqA66gLvRAwFxrxQopLS9JJmpcZWggsvkA7bebRH1rn3KDQGWI8EYhjMY01JsZ96fkT74OwPxm/zAlGXRZyuhrQ0YGeZoYu9Gl29D2IHVNyTKXUq2a7ELlP4kScmYvL35vShblX4sbcQUcLPfNwnsq1zpWmV35zrFfs0wtm+w3nmLtmvfYT9crNV6pehw330YMebR9ln3Hu5+4m5laJ+637KPXWK+9jAA0jvVKvXsRu9f/C2V7KuBN/noqtNQ==
   </data>
  </layer>
  <layer name="Objects" width="19" height="21">
@@ -1194,6 +1194,5 @@
   <object id="107" x="192" y="208" width="16" height="16"/>
   <object id="108" x="224" y="240" width="16" height="16"/>
   <object id="109" x="224" y="272" width="16" height="16"/>
-  <object id="111" x="224" y="304" width="16" height="16"/>
  </objectgroup>
 </map>

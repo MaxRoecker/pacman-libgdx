@@ -11,10 +11,11 @@ import com.badlogic.gdx.math.Vector2;
 public class Pacman extends Entity {
 
     private Animation anim;
-	private int movementPredictionCounter, score;
+	private int movementPredictionCounter, score, lifeCounter;
 	private float speed, animTime = 0f;
     private Direction previousDirection, movementPrediction;
     private Vector2 targetPosition;
+    private boolean alive;
 
     public Pacman(int x, int y, TiledMapTileLayer collisionLayer) {
         super(x, y, collisionLayer);
@@ -34,6 +35,7 @@ public class Pacman extends Entity {
         movementPrediction = Direction.NONE;
         movementPredictionCounter = 0;
         score = 0;
+        alive = true;
     }
 
 	@Override
@@ -81,6 +83,7 @@ public class Pacman extends Entity {
 
 	@Override
     public void draw(Batch batch) {
+		super.draw(batch);
         batch.draw(currentFrame, position.x, position.y, origin.x, origin.y, size.x, size.y, scale.x, scale.y, rotation);
     }
 
@@ -131,4 +134,23 @@ public class Pacman extends Entity {
 		return this.score;
 	}
 
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getLifeCounter() {
+        return lifeCounter;
+    }
+
+    public void setLifeCounter(int lifeCounter) {
+        this.lifeCounter = lifeCounter;
+    }
 }

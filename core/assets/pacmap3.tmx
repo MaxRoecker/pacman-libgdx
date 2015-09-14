@@ -1110,7 +1110,7 @@
  </tileset>
  <layer name="Map" width="19" height="21">
   <data encoding="base64" compression="zlib">
-   eJy1lMENwjAMRd0DJVfEBN2hCyAmQmwEospCqToOjiBS6jq208Dhy1L6+/TUpJkA4NiV4zADphc6MR45AT7d1oSMNRX8NC8PW9ZevyCwTjgfIHs98fkZdNYF51VxzDtWVk+8XAPrl15xb3Mvz3Ty9w/fbpo3XLvDem0wdGiXS9o/Z+i+QJ41ffq96By79ZT6Gks651bWDPy5X3awav7DEiv5aPcE5/ePe4L6WO+vhWG1JnJKPrX3ffR7A73XbJo=
+   eJy1lNENwjAMRK8fQH4RE3QHFkBMhNgIRJWFgjoOjiBSahzHaeDjdFJ6fTq5qScAu6EsRxpJWyUT5YkT8M72KmSsqdCv1svjm7W2X1BYe/Ib9F53en5AnXUiP1c65hkri8/IdbB+2St+23xeXsjk728+2eQXOrtieTYaMjwrKc3MGbIP6N6S5/PifhyWruVrLO2eW1lPyPd+XsFq+Q9LrNSntiekfv/YE7yPdX/NAqtXkVPq07rvY78XTa9sgA==
   </data>
  </layer>
  <layer name="Objects" width="19" height="21">
@@ -1169,7 +1169,6 @@
   <object id="54" x="240" y="160" width="16" height="16"/>
   <object id="55" x="272" y="160" width="16" height="16"/>
   <object id="56" x="192" y="112" width="16" height="16"/>
-  <object id="57" x="144" y="112" width="16" height="16"/>
   <object id="58" x="96" y="112" width="16" height="16"/>
   <object id="59" x="192" y="80" width="16" height="16"/>
   <object id="60" x="144" y="80" width="16" height="16"/>

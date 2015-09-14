@@ -10,6 +10,7 @@ public class BonusPacdot extends Pacdot {
 	private static int textureIndex = 0;
 	private static int accumalativeBonus = 0;
 
+	private boolean eated;
 	private float timer;
 
 	public BonusPacdot(int x, int y, Pacman player) {
@@ -20,6 +21,7 @@ public class BonusPacdot extends Pacdot {
 		currentFrame = new TextureRegion(sprite, textureIndex * Settings.SPRITE_WIDTH, 0, Settings.SPRITE_WIDTH, Settings.SPRITE_HEIGHT);
 		textureIndex = (textureIndex + 1) % (sprite.getWidth() / 16);
 		timer = 0;
+		eated = false;
 	}
 
 	@Override
@@ -30,7 +32,14 @@ public class BonusPacdot extends Pacdot {
 			accumalativeBonus = 0;
 			this.destroy = true;
 		} else {
-			super.update(delta);
+			if (pacman.getBounds().contains(getBounds())){
+				this.destroy = true;
+				eated = true;
+			}
 		}
+	}
+
+	public boolean isEated() {
+		return eated;
 	}
 }

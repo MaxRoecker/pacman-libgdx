@@ -14,7 +14,9 @@ public class Junction extends Entity {
     public Junction(int x, int y, Ghost ghost) {
         super(x, y, ghost != null? ghost.getCollisionLayer() : null);
         this.ghost = ghost;
-        setBounds(getX() + 7,getY()+7,2,2);
+        setBounds(getX(),getY(),16,16);
     }
 
+    @Override
+    public void update(float delta) {}
 }
